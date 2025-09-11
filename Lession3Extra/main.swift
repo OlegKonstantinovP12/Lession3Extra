@@ -134,7 +134,7 @@ print(count)
  */
 
 let inputString: String = "hello"
-let ArrayStringElements = Array(inputString)
+let ArrayStringElements = Array(inputString.lowercased())
 var outputArrayOfStrings: [String] = []
 
 if inputString != "" {
@@ -151,6 +151,9 @@ print(outputArrayOfStrings)
 
 /*
   Разбор этого задания начался с этого решения
+let inputString: String = "hello"
+var outputArrayOfChar: [String] = []
+var outputArrayOfStrings: [String] = []
  
 if inputString != "" {
     for char in inputString.lowercased() {
@@ -167,7 +170,7 @@ if inputString != "" {
         
     }
 }
- */
+*/
 
 
 
