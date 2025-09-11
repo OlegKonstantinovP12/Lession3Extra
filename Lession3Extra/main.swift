@@ -117,3 +117,59 @@ for number in mixedArray {
 }
 
 print(count)
+
+//MARK: - Задача 5
+/*
+ Задача
+
+ В этой простой Kata ваша задача - создать функцию, которая превращает строку в мексиканскую волну. Вам будет передана строка, и вы должны вернуть массив строк, где заглавная буква - это человек, стоящий.
+
+ Правила
+
+ 1. Входная строка всегда будет состоять из строчных букв и пробелов, но может быть пустой, в этом случае вы должны вернуть пустой массив.
+ 2. Если символ в строке является пробелом, то пропустите его, как будто это пустое место
+ 
+ "hello" => ["Hello", "hEllo", "heLlo", "helLo", "hellO"]
+ " s p a c e s " => [ " S p a c e s ", " s P a c e s ", " s p A c e s ", " s p a C e s ", " s p a c E s ", " s p a c e S "]
+ */
+
+let inputString: String = "hello"
+let ArrayStringElements = Array(inputString)
+var outputArrayOfStrings: [String] = []
+
+if inputString != "" {
+    for char in 0...ArrayStringElements.count - 1 {
+        var copyCharArray = ArrayStringElements
+        copyCharArray[char] = Character(ArrayStringElements[char].uppercased())
+        if copyCharArray[char] != " " {
+            let result = String(copyCharArray)
+            outputArrayOfStrings.append(result)
+        }
+    }
+}
+print(outputArrayOfStrings)
+
+/*
+  Разбор этого задания начался с этого решения
+ 
+if inputString != "" {
+    for char in inputString.lowercased() {
+        outputArrayOfChar.append(String(char))
+    }
+    
+    for char in 0...outputArrayOfChar.count - 1 {
+        var copyCharArray = outputArrayOfChar
+        copyCharArray[char] = outputArrayOfChar[char].uppercased()
+        if copyCharArray[char] != " " {
+            let result = copyCharArray.reduce("") { $0 + $1 }
+            outputArrayOfStrings.append(result)
+        }
+        
+    }
+}
+ */
+
+
+
+
+
